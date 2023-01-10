@@ -1,16 +1,17 @@
 <?php
+    $dbHost = 'Localhost';
+    $dbUsername = 'root';
+    $dbPassword = '';
+    $dbName = 'formulario';
 
-    $dbHost= 'localhost';
-    $dbUsername= 'root';
-    $dbPassword= '';
-    $dbName= 'formulario';
+    $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 
-    $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName );
-
-    if($conexao->connect_errno){
+   /* if($conexao-> connect_errno)
+    {
         echo "erro";
     }
-    else{
-        echo"conexão efetuada com sucesso !"
-    }
+    else
+    {
+        echo 'conexão online';
+    }*/
 ?>

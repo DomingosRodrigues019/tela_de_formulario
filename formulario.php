@@ -20,6 +20,7 @@
         include_once('config.php');
 
         $nome = $_POST['nome'];
+        $senha = $_POST['senha'];
         $email = $_POST['email'];
         $telefone = $_POST['telefone'];
         $sexo = $_POST['genero'];
@@ -28,8 +29,8 @@
         $estado = $_POST['estado'];
         $endereco = $_POST['endereco'];
 
-        $result = mysqli_query( $conexao, "INSERT INTO usuarios(nome, email, telefone, sexo, data_nasc, cidade, estado, endereco) 
-        VALUES ( '$nome', '$email', '$telefone', '$sexo', '$data_nasc', '$cidade', '$estado', '$endereco' )");
+        $result = mysqli_query( $conexao, "INSERT INTO usuarios(nome, senha, email, telefone, sexo, data_nasc, cidade, estado, endereco) 
+        VALUES ( '$nome','$senha','$email', '$telefone', '$sexo', '$data_nasc', '$cidade', '$estado', '$endereco' )");
     }   
 
 ?>
@@ -78,7 +79,7 @@
             border-bottom: 1px solid white;
             color: white;
             font-size:15px;
-            width: 100%;
+            width: 175%;
         }
         .LabelInput{
             position: absolute;
@@ -117,14 +118,20 @@
     </style>
 </head>
 <body>
+<a href="home.php">Voltar</a>
     <div class="box">
         <form action="formulario.php" method= "POST">
             <fieldset>
-                <legend><b>FORMULARIO DE PACIENTE DSEI-ARN</b></legend>
+                <legend><b>FORMULARIO </b></legend>
                 <br>
                 <div class="inputbox">
                     <input type="text" name="nome", id="nome", class="inputUser" required>
                     <label for="name" class="LabelInput">Nome Completo</label>
+                </div>
+                <br><br>
+                <div class="inputbox">
+                    <input type="password" name="senha", id="senha", class="inputUser" required>
+                    <label for="senha" class="LabelInput">Senha</label>
                 </div>
                 <br><br>
                 <div class="inputbox">
@@ -151,8 +158,8 @@
                 <input type="date" name="data_nascimento" id="data_nascimento" required>  
                 <br><br>
                 <div class="inputbox">
-                        <input type="text"name="cidade", id="cidade", class="inputUser" required>
-                        <label for="cidade" class="LabelInput">Cidade</label>
+                    <input type="text"name="cidade", id="cidade", class="inputUser" required>
+                    <label for="cidade" class="LabelInput">Cidade</label>
                 </div>
                 <br><br>
                 <div class="inputbox">
